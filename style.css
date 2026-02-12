@@ -37,7 +37,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg-primary);
@@ -45,6 +45,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    width: 100%;
+    max-width: 100vw;
 }
 a { text-decoration: none; color: inherit; }
 button { border: none; background: none; cursor: pointer; font-family: inherit; color: inherit; }
@@ -242,7 +244,7 @@ ul { list-style: none; }
 }
 
 /* ═══ HERO ═══ */
-.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 80px; }
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 80px; overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 .hero-grain { position: absolute; inset: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); }
 .hero-gradient-1 { position: absolute; width: 50vw; height: 50vw; top: -10%; right: -10%; background: radial-gradient(circle, rgba(212,165,116,0.08) 0%, transparent 70%); animation: heroFloat 15s ease-in-out infinite; }
@@ -251,7 +253,7 @@ ul { list-style: none; }
 .hero-particles { position: absolute; inset: 0; }
 .hero-particle { position: absolute; bottom: -5px; background: var(--gold); border-radius: 50%; opacity: var(--opacity, 0.3); animation: particleRise var(--duration, 10s) linear infinite; animation-delay: var(--delay, 0s); }
 @keyframes particleRise { from { transform: translateY(0); opacity: var(--opacity, 0.3); } to { transform: translateY(-100vh); opacity: 0; } }
-.hero-content { position: relative; z-index: 1; text-align: center; max-width: 800px; padding: 0 20px; }
+.hero-content { position: relative; z-index: 1; text-align: center; max-width: 800px; padding: 0 20px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; width: 100%; }
 .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 8px 20px; border-radius: var(--radius-full);
@@ -707,7 +709,10 @@ ul { list-style: none; }
     .section-header { margin-bottom: 40px; }
     .section-title { font-size: clamp(1.6rem, 5vw, 2.2rem); }
     .section-desc { font-size: 0.95rem; padding: 0 10px; }
-    .hero { padding-top: 60px; min-height: 90vh; }
+    .hero { padding-top: 60px; min-height: 90vh; overflow: hidden; }
+    .hero-content { padding: 0 16px; }
+    .float-elements { display: none !important; }
+    .hero-gradient-1, .hero-gradient-2 { display: none; }
     .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
     .hero-subtitle { font-size: 0.9rem; padding: 0 10px; }
     .hero-buttons { gap: 10px; }
@@ -743,7 +748,8 @@ ul { list-style: none; }
     .section-tag { font-size: 0.72rem; padding: 5px 12px; }
 
     /* Hero mobile */
-    .hero { padding-top: 50px; min-height: 85vh; }
+    .hero { padding-top: 50px; min-height: 85vh; overflow: hidden; }
+    .hero-content { padding: 0 16px; align-items: center; text-align: center; }
     .hero-title { font-size: clamp(1.8rem, 9vw, 2.5rem); margin-bottom: 14px; }
     .hero-title-line { font-size: 0.5em; letter-spacing: 4px; }
     .hero-subtitle { font-size: 0.85rem; margin-bottom: 24px; }
@@ -755,6 +761,14 @@ ul { list-style: none; }
     .hero-stat-number { font-size: 1.3rem; }
     .hero-stat-label { font-size: 0.7rem; }
     .hero-scroll-indicator { bottom: 15px; }
+
+    /* Hide float elements on mobile */
+    .float-elements { display: none !important; }
+    .hero-gradient-1, .hero-gradient-2 { display: none; }
+
+    /* Prevent any horizontal overflow */
+    #app { overflow-x: hidden; width: 100%; }
+    .section { overflow-x: hidden; }
 
     /* Nav mobile */
     .navbar { padding: 10px 0; }
