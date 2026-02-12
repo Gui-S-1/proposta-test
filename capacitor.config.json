@@ -1,0 +1,11 @@
+{
+  "appId": "com.paodemilho.app",
+  "appName": "Pão de Milho",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#06060b"
+  }
+}
