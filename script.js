@@ -8,73 +8,85 @@ const _MI='https://assets.menuintegrado.com/rails/active_storage/representations
 const _MV='/w200_q75.webp';
 const mimg=(id)=>`${_MI}${id}${_MV}`;
 
-/* ─── FALLBACK FOOD IMAGES (free Unsplash) ─── */
+/* ─── FALLBACK FOOD IMAGES ─── */
 const foodImg = {
   // Pães
-  'Pão Francês':        'https://images.unsplash.com/photo-1549931319-a545753467c8?w=400&h=300&fit=crop',
-  'Pão de Milho':       'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=300&fit=crop',
-  'Pão de Forma':       'https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=400&h=300&fit=crop',
-  'Pão Doce':           'https://images.unsplash.com/photo-1620921568790-c1cf8984624c?w=400&h=300&fit=crop',
-  'Pão de Queijo':      'https://images.unsplash.com/photo-1598142982901-df6cec890871?w=400&h=300&fit=crop',
-  'Broa de Fubá':       'https://images.unsplash.com/photo-1586444248879-bc604bc77ddd?w=400&h=300&fit=crop',
-  'Rosca Doce':         'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=300&fit=crop',
-  'Pão Integral':       'https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=400&h=300&fit=crop',
-  'Pão na Chapa':       'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&h=300&fit=crop',
-  'Pão de Batata':      'https://images.unsplash.com/photo-1585478259715-876acc5be8eb?w=400&h=300&fit=crop',
-  'Pão Australiano':    'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=300&fit=crop',
+  'Pão Francês':        'https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Pão de Milho':       'https://images.pexels.com/photos/2286972/pexels-photo-2286972.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Pão de Forma':       'https://images.pexels.com/photos/1756062/pexels-photo-1756062.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Pão Doce':           'https://images.pexels.com/photos/267308/pexels-photo-267308.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Pão de Queijo':      'https://images.pexels.com/photos/5765/bread-food-bakery-sour-dough.jpg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Broa de Fubá':       'https://images.pexels.com/photos/1387070/pexels-photo-1387070.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Rosca Doce':         'https://images.pexels.com/photos/1070850/pexels-photo-1070850.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Pão Integral':       'https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Pão na Chapa':       'https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Pão de Batata':      'https://images.pexels.com/photos/2286972/pexels-photo-2286972.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Pão Australiano':    'https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
   // Salgados
-  'Coxinha':            'https://images.unsplash.com/photo-1630409351241-e90e7f5e434d?w=400&h=300&fit=crop',
-  'Empada de Frango':   'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop',
-  'Esfiha de Carne':    'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=300&fit=crop',
-  'Pastel de Queijo':   'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop',
-  'Enroladinho de Salsicha':'https://images.unsplash.com/photo-1619221882220-947b3d3c8861?w=400&h=300&fit=crop',
-  'Torta de Frango':    'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=300&fit=crop',
-  'Quibe Frito':        'https://images.unsplash.com/photo-1579888944880-d98341245702?w=400&h=300&fit=crop',
-  'Torta de Palmito':   'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=300&fit=crop',
-  'Empanada':           'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop',
+  'Coxinha':            'https://images.pexels.com/photos/6646069/pexels-photo-6646069.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Empada de Frango':   'https://images.pexels.com/photos/6646069/pexels-photo-6646069.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Esfiha de Carne':    'https://images.pexels.com/photos/6419747/pexels-photo-6419747.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Pastel de Queijo':   'https://images.pexels.com/photos/4553027/pexels-photo-4553027.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Enroladinho de Salsicha':'https://images.pexels.com/photos/3756523/pexels-photo-3756523.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Torta de Frango':    'https://images.pexels.com/photos/6941010/pexels-photo-6941010.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Quibe Frito':        'https://images.pexels.com/photos/6419747/pexels-photo-6419747.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Torta de Palmito':   'https://images.pexels.com/photos/6941010/pexels-photo-6941010.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Empanada':           'https://images.pexels.com/photos/4553027/pexels-photo-4553027.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
   // Lanches
-  'X-Bacon Artesanal':  'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop',
-  'X-Tudo Especial':    'https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&h=300&fit=crop',
-  'Misto Quente':       'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&h=300&fit=crop',
-  'Bauru Especial':     'https://images.unsplash.com/photo-1553909489-cd47e0907980?w=400&h=300&fit=crop',
-  'Hot Dog Tradicional':'https://images.unsplash.com/photo-1612392062126-4a3f0286b5e0?w=400&h=300&fit=crop',
-  'Cachorro Quente Especial':'https://images.unsplash.com/photo-1612392062126-4a3f0286b5e0?w=400&h=300&fit=crop',
-  'Croissant Recheado': 'https://images.unsplash.com/photo-1555507036-ab1f4038024a?w=400&h=300&fit=crop',
-  'Wrap de Frango':     'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=300&fit=crop',
+  'X-Bacon Artesanal':  'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'X-Tudo Especial':    'https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Misto Quente':       'https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Bauru Especial':     'https://images.pexels.com/photos/1603901/pexels-photo-1603901.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Hot Dog Tradicional':'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Cachorro Quente Especial':'https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Croissant Recheado': 'https://images.pexels.com/photos/3892469/pexels-photo-3892469.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Wrap de Frango':     'https://images.pexels.com/photos/2955819/pexels-photo-2955819.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
   // Doces
-  'Bolo de Chocolate':  'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop',
-  'Bolo de Cenoura':    'https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=400&h=300&fit=crop',
-  'Torta de Limão':     'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&h=300&fit=crop',
-  'Pudim de Leite':     'https://images.unsplash.com/photo-1614961908643-0e775e0a3087?w=400&h=300&fit=crop',
-  'Brigadeiro Gourmet': 'https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=400&h=300&fit=crop',
-  'Sonho Recheado':     'https://images.unsplash.com/photo-1558326567-98ae2405596b?w=400&h=300&fit=crop',
-  'Croissant de Chocolate':'https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=400&h=300&fit=crop',
-  'Bolo de Fubá':       'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=400&h=300&fit=crop',
-  'Carolina':           'https://images.unsplash.com/photo-1612203985729-70726954388c?w=400&h=300&fit=crop',
-  'Bolinho de Chuva':   'https://images.unsplash.com/photo-1558326567-98ae2405596b?w=400&h=300&fit=crop',
+  'Bolo de Chocolate':  'https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Bolo de Cenoura':    'https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Torta de Limão':     'https://images.pexels.com/photos/4110003/pexels-photo-4110003.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Pudim de Leite':     'https://images.pexels.com/photos/4110008/pexels-photo-4110008.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Brigadeiro Gourmet': 'https://images.pexels.com/photos/65882/chocolate-dark-coffee-confiserie-65882.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Sonho Recheado':     'https://images.pexels.com/photos/267308/pexels-photo-267308.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Croissant de Chocolate':'https://images.pexels.com/photos/3892469/pexels-photo-3892469.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Bolo de Fubá':       'https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Carolina':           'https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Bolinho de Chuva':   'https://images.pexels.com/photos/267308/pexels-photo-267308.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
   // Bebidas
-  'Café Expresso':      'https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&h=300&fit=crop',
-  'Cappuccino':         'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop',
-  'Suco de Laranja':    'https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400&h=300&fit=crop',
-  'Chocolate Quente':   'https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=400&h=300&fit=crop',
-  'Vitamina de Banana': 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400&h=300&fit=crop',
-  'Chá Gelado':         'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop',
-  'Limonada Suíça':     'https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=400&h=300&fit=crop',
-  'Café com Leite':     'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=300&fit=crop',
-  'Açaí 500ml':         'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=400&h=300&fit=crop',
-  'Frappuccino':        'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=300&fit=crop',
+  'Café Expresso':      'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Cappuccino':         'https://images.pexels.com/photos/350478/pexels-photo-350478.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Suco de Laranja':    'https://images.pexels.com/photos/158053/fresh-orange-juice-squeezed-refreshing-citrus-158053.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Chocolate Quente':   'https://images.pexels.com/photos/6413/coffee-cup-desk-pen.jpg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Vitamina de Banana': 'https://images.pexels.com/photos/3625372/pexels-photo-3625372.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Chá Gelado':         'https://images.pexels.com/photos/792613/pexels-photo-792613.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Limonada Suíça':     'https://images.pexels.com/photos/2109099/pexels-photo-2109099.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Café com Leite':     'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Açaí 500ml':         'https://images.pexels.com/photos/1030973/pexels-photo-1030973.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Frappuccino':        'https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
   // Combos
-  'Combo Café da Manhã':'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=400&h=300&fit=crop',
-  'Combo Lanche':       'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop',
-  'Combo Família':      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop',
-  'Combo Doce':         'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop',
+  'Combo Café da Manhã':'https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Combo Lanche':       'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Combo Família':      'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+  'Combo Doce':         'https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
 };
+
+/* Default placeholder for any broken image */
+const IMG_FALLBACK = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%2312121c" width="400" height="300"/><text fill="%23D4A574" font-family="sans-serif" font-size="18" text-anchor="middle" x="200" y="145">Pão de Milho</text><text fill="%23666" font-family="sans-serif" font-size="13" text-anchor="middle" x="200" y="170">Imagem em breve</text></svg>');
 
 /* Apply fallback images to all items */
 function applyFoodImages() {
   allItems.forEach(item => { if(foodImg[item.n]) item.img = foodImg[item.n]; });
   combos.forEach(item => { if(foodImg[item.n]) item.img = foodImg[item.n]; });
 }
+
+/* Global image error handler — replaces broken images automatically */
+document.addEventListener('error', function(e) {
+  if (e.target.tagName === 'IMG' && !e.target.dataset.fallback) {
+    e.target.dataset.fallback = '1';
+    e.target.src = IMG_FALLBACK;
+    e.target.style.objectFit = 'cover';
+  }
+}, true);
 
 /* ─── FOOD DATABASE ─── */
 const allItems=[
